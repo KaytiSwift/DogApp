@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<DogApp.Models.Dog>
 @{
     Layout = null;
 }
@@ -12,5 +12,12 @@
 </head>
 <body>
     <h1>Home Page</h1>
+
+    @foreach (var dog in Model)
+    {
+        <div>
+            <a href="/home/details/@dog.Id">@dog.Name</a>
+        </div>
+    }
 </body>
 </html>

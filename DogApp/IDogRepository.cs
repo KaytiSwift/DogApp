@@ -9,5 +9,6 @@ namespace DogApp
     public interface IDogRepository
     {
         List<Dog> GetAll();
+        Dog FindById(int id);
     }
 }

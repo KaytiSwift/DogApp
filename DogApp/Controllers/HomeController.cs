@@ -15,10 +15,16 @@ namespace DogApp.Controllers
             this.dogRepo = dogRepo;
         }
 
-        public object Index()
+        public ViewResult Index()
         {
-            dogRepo.GetAll();
-            return View();
+            var model = dogRepo.GetAll();
+            return View(model);
+        }
+
+        public ViewResult Details(int id)
+        {
+            var model = dogRepo.FindById(id);
+            return View(model);
         }
     }
 }
